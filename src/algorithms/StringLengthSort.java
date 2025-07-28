@@ -13,12 +13,7 @@ public class StringLengthSort {
     public static String[] sortStringsByLength(String[] strings) {
         String[] result = Arrays.copyOf(strings, strings.length);
 
-        Arrays.sort(result, new Comparator<String>() {
-            @Override
-            public int compare(String s1, String s2) {
-                return Integer.compare(s1.length(), s2.length());
-            }
-        });
+        Arrays.sort(result, (s1, s2) -> Integer.compare(s1.length(), s2.length()));
 
         return result;
     }
